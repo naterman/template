@@ -1,0 +1,72 @@
+/*
+ * Gradle Application Build File
+ */
+
+// ===================================================================
+// Core Settings
+// ===================================================================
+plugins {
+    id 'buildLogic.libraryfx'
+    id 'io.miret.etienne.sass' version '1.6.0'
+}
+
+configurations {
+    atlantafxStyles
+}
+
+dependencies {
+    implementation(libs.atlantafx)
+    implementation(libs.stylefx)
+    atlantafxStyles(libs.stylefx)
+}
+
+def unpackAtlanFX = tasks.register('unpackAtlanFX', Sync) {
+    from {
+        configurations.atlantafxStyles.collect {
+            zipTree(it).matching {
+                include 'atlantafx/**'
+            }
+        }
+    }
+
+    into layout.buildDirectory.dir('sass')
+}
+
+sass {
+    version = '1.104.0'
+    noAutoCopy ()
+}
+
+compileSass {
+    sourceDir = file("${projectDir}/src/main/sass")
+    outputDir = file("${buildDir}/dist/css")
+
+    loadPath file("${buildDir}/sass")
+
+    entryPoint 'default.scss', 'default.css'
+
+    sourceMap = none
+}
+
+compileSass.dependsOn unpackAtlanFX
+
+tasks.named('compileJava') {
+    dependsOn compileSass
+}
+
+sourceSets {
+    main {
+        resources {
+            // Adds a custom folder containing generated resources to the classpath
+            srcDir "${buildDir}/dist"
+        }
+    }
+}
+
+processResources {
+    dependsOn compileSass
+}
+
+processTestResources {
+    dependsOn compileSass
+}

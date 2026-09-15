@@ -1,0 +1,16 @@
+/*
+ * Gradle Messaging Build File
+ */
+
+// ===================================================================
+// Core Settings
+// ===================================================================
+plugins {
+    id 'buildLogic.library'
+}
+
+dependencies {
+    implementation(libs.nats)
+    implementation(libs.nkeys)
+    implementation(libs.testcontainers.nats)
+}

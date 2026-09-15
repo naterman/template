@@ -1,0 +1,67 @@
+/*
+ * Gradle Messaging Build File
+ */
+
+// ===================================================================
+// Core Settings
+// ===================================================================
+plugins {
+    id 'buildLogic.library'
+}
+
+repositories {
+    maven {
+        name = 'osgeo'
+        url = 'https://repo.osgeo.org/repository/geotools-releases/'
+        mavenContent {
+            releasesOnly()
+        }
+    }
+}
+
+dependencies {
+    implementation(libs.graphhopper)
+
+    // implementation 'org.geotools:gt-main:35.1'
+    // implementation 'org.geotools:gt-geopkg:35.1'
+
+    // implementation 'org.geotools:gt-jdbc:35.1'
+
+    // implementation 'org.geotools:gt-kml:35.1'
+    // implementation 'org.geotools.xsd:gt-kml:2.5-M2'
+    // implementation 'org.geotools:gt-xsd-kml:35.1'
+    // implementation 'org.geotools.xsd:gt-xsd-kml:35.1'
+    // implementation 'org.geotools.xsd:gt-xsd-core:35.1'
+
+    // implementation 'org.geotools:gt-xml:35.1'
+
+
+    // 3. The underlying SQLite database driver
+    implementation 'org.xerial:sqlite-jdbc:3.53.4.0'
+
+    implementation 'mil.nga.geopackage:geopackage:6.6.5'
+}
+
+test {
+    maxHeapSize = "8g"
+    minHeapSize = "2g"
+
+    systemProperty 'graphhopper.data',
+            rootProject.layout.projectDirectory
+            .dir('services/routing/runtime/data/graphhopper')
+            .asFile
+            .absolutePath
+}
+
+// run {
+//     systemProperty 'graphhopper.data',
+//             rootProject.layout.projectDirectory
+//             .dir('services/routing/runtime/data/graphhopper')
+//             .asFile
+//             .absolutePath
+// }
+
+configurations.all {
+    exclude group: 'xerces', module: 'xercesImpl'
+    exclude group: 'xml-apis', module: 'xml-apis'
+}

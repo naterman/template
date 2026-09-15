@@ -1,0 +1,14 @@
+/*
+ * Gradle Application Build File
+ */
+
+// ===================================================================
+// Core Settings
+// ===================================================================
+plugins {
+    id 'buildLogic.libraryfx'
+}
+
+dependencies {
+    implementation(project(":api"))
+}

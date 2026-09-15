@@ -1,0 +1,31 @@
+/*
+ * Gradle Application Build File
+ */
+
+// ===================================================================
+// Core Settings
+// ===================================================================
+plugins {
+    id 'buildLogic.applicationfx'
+}
+
+dependencies {
+    implementation(project(':style'))
+    implementation(project(':api'))
+    implementation(project(':framework'))
+    implementation(project(':fxloader'))
+    implementation(project(':mapview'))
+}
+
+// ===================================================================
+// Application Settings
+// ===================================================================
+application {
+    // Define the main class for the application.
+    mainClass = 'org.example.app.App'
+    applicationName = "Template"
+}
+
+run {
+    standardOutput = System.out
+}

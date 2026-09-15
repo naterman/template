@@ -1,0 +1,166 @@
+{
+    "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home",
+    "java.import.gradle.java.home": "/Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.gradle.buildServer.enabled": "off",
+    "java.autobuild.enabled": false,
+    "editor.inlayHints.enabled": "on",
+    "java.inlayHints.parameterNames.enabled": "all",
+    "editor.stickyScroll.enabled": true,
+    "java.saveActions.cleanup": true,
+    "jdk.format.options": {
+        "separateImportGroups": true,
+        "separateStaticImports": true,
+        "sortMembersByVisibility": true
+    },
+    "java.format.enabled": true,
+    "java.completion.filteredTypes": [
+        "java.awt.*",
+        "com.sun.*",
+        "sun.*",
+        "jdk.*",
+        "org.graalvm.*",
+        "io.micrometer.shaded.*"
+    ],
+    "[java]": {
+        "files.trimTrailingWhitespace": true,
+        "editor.defaultFormatter": "Oracle.oracle-java",
+        "editor.formatOnSave": false,
+        "editor.formatOnPaste": false,
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+    },
+    "java.debug.settings.stepping.skipClasses": [
+        "java.*",
+        "javax.*",
+        "sun.*",
+        "com.sun.*",
+        "jdk.*"
+    ],
+    "java.test.config": [
+        {
+            "name": "Unit Tests",
+            "workingDirectory": "${workspaceFolder}"
+        }
+    ],
+    "[gradle]": {
+        "files.trimTrailingWhitespace": true,
+        "spotlessGradle.diagnostics.enable": true,
+        "spotlessGradle.format.enable": true,
+        "editor.defaultFormatter": "richardwillis.vscode-spotless-gradle",
+        "editor.codeActionsOnSave": {
+            "source.fixAll.spotlessGradle": "always"
+        }
+    },
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda",
+    "explorerSort.rules": [
+        {
+            "name": "FSD Structure",
+            "pathPattern": "**",
+            "priorities": [
+                {
+                    "condition": "name === 'client'",
+                    "priority": 1000
+                },
+                {
+                    "condition": "name === 'core'",
+                    "priority": 999
+                },
+                {
+                    "condition": "name === 'services'",
+                    "priority": 777
+                },
+                {
+                    "condition": "name === 'remote'",
+                    "priority": 725
+                },
+                {
+                    "condition": "name === 'utilities'",
+                    "priority": 700
+                },
+                {
+                    "condition": "name === 'config'",
+                    "priority": 666
+                },
+                {
+                    "condition": "name === 'py'",
+                    "priority": 555
+                },
+                {
+                    "condition": "name === 'gradle'",
+                    "priority": -1
+                },
+                {
+                    "condition": "name === 'buildSrc'",
+                    "priority": -2
+                },
+            ]
+        }
+    ],
+    "explorerSort.defaultSort": "name",
+    "explorerSort.showHiddenFiles": false,
+    "explorerSort.excludePatterns": [
+        "node_modules",
+        "dist",
+        "bin",
+        "build",
+        ".git"
+    ],
+    "explorerSort.respectGitignore": false,
+    "vsicons.associations.folders": [
+        {
+            "icon": "interfaces",
+            "extensions": [
+                "framework"
+            ],
+        },
+        {
+            "icon": "docker",
+            "extensions": [
+                "containers"
+            ],
+        },
+        {
+            "icon": "package",
+            "extensions": [
+                "resources"
+            ],
+        },
+        {
+            "icon": "gradle",
+            "extensions": [
+                "buildSrc"
+            ],
+        },
+        {
+            "icon": "trunk",
+            "extensions": [
+                "main"
+            ],
+        },
+        {
+            "icon": "git",
+            "extensions": [
+                ".githooks"
+            ],
+        },
+        {
+            "icon": "common",
+            "extensions": [
+                "core"
+            ],
+        },
+        {
+            "icon": "db",
+            "extensions": [
+                "postgresql"
+            ],
+        },
+    ],
+    "workbench.view.showQuietly": {
+        "workbench.panel.output": true
+    },
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx4G -Xms100m -Xlog:disable",
+    "java.compile.nullAnalysis.mode": "disabled"
+}

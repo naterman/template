@@ -1,0 +1,32 @@
+services:
+  hivemq:
+    build:
+      context: ./hivemq
+      dockerfile: Dockerfile
+
+    container_name: hivemq
+    hostname: hivemq
+
+    ports:
+      # MQTT over TLS
+      - "8883:8883"
+
+      # HiveMQ Control Center
+      - "8080:8080"
+
+    volumes:
+      - hivemq-data:/opt/hivemq/data
+      - hivemq-log:/opt/hivemq/log
+
+    networks:
+      - mqtt-network
+
+    restart: unless-stopped
+
+networks:
+  mqtt-network:
+    driver: bridge
+
+volumes:
+  hivemq-data:
+  hivemq-log:

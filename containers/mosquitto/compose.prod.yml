@@ -1,0 +1,60 @@
+services:
+  # ============================================================
+  # Edge broker 1
+  # ============================================================
+
+  mosquitto-edge-1:
+    image: eclipse-mosquitto:2
+
+    container_name: mosquitto-edge-1
+    hostname: mosquitto-edge-1
+
+    ports:
+      - "1884:1883"
+
+    volumes:
+      - ./mosquitto-edge-1/config:/mosquitto/config
+      - ./mosquitto-edge-1/data:/mosquitto/data
+      - ./mosquitto-edge-1/log:/mosquitto/log
+
+    depends_on:
+      - hivemq
+
+    networks:
+      - mqtt-network
+
+    restart: unless-stopped
+
+  # ============================================================
+  # Edge broker 2
+  # ============================================================
+
+  mosquitto-edge-2:
+    image: eclipse-mosquitto:2
+
+    container_name: mosquitto-edge-2
+    hostname: mosquitto-edge-2
+
+    ports:
+      - "1885:1883"
+
+    volumes:
+      - ./mosquitto-edge-2/config:/mosquitto/config
+      - ./mosquitto-edge-2/data:/mosquitto/data
+      - ./mosquitto-edge-2/log:/mosquitto/log
+
+    depends_on:
+      - hivemq
+
+    networks:
+      - mqtt-network
+
+    restart: unless-stopped
+
+networks:
+  mqtt-network:
+    driver: bridge
+
+volumes:
+  hivemq-data:
+  hivemq-log:

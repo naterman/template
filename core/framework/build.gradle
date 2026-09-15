@@ -1,0 +1,15 @@
+/*
+ * Gradle Framework Build File
+ */
+
+// ===================================================================
+// Core Settings
+// ===================================================================
+plugins {
+    id 'buildLogic.library'
+}
+
+dependencies {
+    implementation(project(':api'))
+    implementation(libs.commons.text)
+}

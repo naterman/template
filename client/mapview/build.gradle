@@ -1,0 +1,30 @@
+/*
+ * Gradle Application Build File
+ */
+
+// ===================================================================
+// Core Settings
+// ===================================================================
+plugins {
+    id 'buildLogic.libraryfx'
+    id 'com.gluonhq.gluonfx-gradle-plugin' version '1.0.29'
+}
+
+dependencies {
+    api('com.gluonhq:maps:2.0.0-ea+6')
+    api('com.gluonhq.attach:storage:4.0.25')
+}
+
+gluonfx {
+    target = 'host' // Options: 'host', 'ios', 'android', 'embedded'
+
+    // Configures GraalVM native-image parameters
+    compilerArgs = ["--no-fallback"]
+
+    // Automatically include Gluon Attach features if using them (e.g., storage, browser)
+    attachConfig {
+        version = "4.0.25"
+        configuration = "implementation";
+        services "storage"
+    }
+}

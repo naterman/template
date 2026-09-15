@@ -1,0 +1,13 @@
+**/graphhopper/*.gpkg
+**/graphhopper/*.kml
+**/graphhopper/*.pbf
+
+# Keep folder structure, but ignore files
+
+**/graphhopper/cache/*
+**/graphhopper/cache/elevation/*
+
+!**/graphhopper/cache/elevation
+!**/graphhopper/cache/.keep
+!**/graphhopper/cache/elevation/.keep
+

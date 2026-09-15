@@ -1,0 +1,22 @@
+/*
+ * Gradle Model Build File
+ */
+
+// ===================================================================
+// Core Settings
+// ===================================================================
+plugins {
+    id 'buildLogic.library'
+    id 'buildLogic.protobuf'
+    id 'eclipse'
+}
+
+dependencies {
+    implementation(libs.commons.text)
+    implementation(project(':api'))
+}
+
+eclipse {
+    // Tells VS Code to run this task when synchronizing the project
+    synchronizationTasks tasks.named('generateProto')
+}

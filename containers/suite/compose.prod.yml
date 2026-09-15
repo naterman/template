@@ -1,0 +1,14 @@
+include:
+  - path: ../postgresql/compose.prod.yml
+  - path: ../nats/compose.prod.yml
+
+networks:
+  default:
+    name: production_app_net
+    driver: bridge
+  mqtt-network:
+    driver: bridge
+
+volumes:
+  hivemq-data:
+  hivemq-log:

@@ -1,0 +1,21 @@
+/*
+ * Gradle Database Build File
+ */
+
+// ===================================================================
+// Core Settings
+// ===================================================================
+plugins {
+    id 'buildLogic.library'
+    id 'buildLogic.jooq-sqlite'
+    id 'eclipse'
+}
+
+dependencies {
+    implementation(libs.bundles.database)
+    implementation(libs.sqlite.jdbc)
+}
+
+eclipse {
+    synchronizationTasks tasks.named('generateJooqCode')
+}

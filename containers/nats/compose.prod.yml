@@ -1,0 +1,14 @@
+services:
+  nats:
+    image: nats:latest
+    container_name: nats-server
+    ports:
+      - "4222:4222" # Clients
+      - "8222:8222" # Monitoring
+    volumes:
+      - .config/init/nats.conf:/etc/nats/nats.conf:ro
+    command: ["-c", "/etc/nats/nats.conf"]
+
+secrets:
+  users:
+    file: ./config/secrets/users.txt

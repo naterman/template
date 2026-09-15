@@ -1,0 +1,15 @@
+/*
+ * Gradle Server Build File
+ */
+
+// ===================================================================
+// Core Settings
+// ===================================================================
+plugins {
+    id 'buildLogic.library'
+}
+
+dependencies {
+    implementation(project(':repository'))
+    implementation(project(':messaging'))
+}

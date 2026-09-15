@@ -1,0 +1,24 @@
+# ============================================================
+# Edge 1 local devices
+# ============================================================
+
+user edge-device
+
+topic write edge/edge-1/telemetry/#
+topic write edge/edge-1/state/#
+topic write edge/edge-1/events/#
+
+topic read edge/edge-1/commands/#
+
+
+# ============================================================
+# Bridge account
+# ============================================================
+
+user edge-1
+
+topic write edge/edge-1/telemetry/#
+topic write edge/edge-1/state/#
+topic write edge/edge-1/events/#
+
+topic read edge/edge-1/commands/#

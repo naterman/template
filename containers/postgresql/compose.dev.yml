@@ -1,0 +1,16 @@
+services:
+  postgres-local:
+    extends:
+      file: ./compose.prod.yml
+      service: postgres
+    environment:
+      DB_USERNAME: postgres
+      DB_PASSWORD: testingpassword
+
+  postgres-remote:
+    extends:
+      file: ./compose.prod.yml
+      service: postgres
+    environment:
+      DB_USERNAME: postgres
+      DB_PASSWORD: testingpassword

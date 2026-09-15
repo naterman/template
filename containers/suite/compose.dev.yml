@@ -1,0 +1,3 @@
+include:
+  - path: ../postgresql/compose.dev.yml
+  - path: ../nats/compose.dev.yml

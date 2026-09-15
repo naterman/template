@@ -1,0 +1,12 @@
+#!/bin/sh
+echo "🔍 Running formatting and static analysis..."
+
+# --continue ensures SpotBugs and SonarLint run even if Spotless fails
+./gradlew spotlessCheck spotbugsMain sonarlintMain --daemon --continue
+status=$?
+
+if [ $status -ne 0 ]; then
+    echo "❌ Pre-commit failed. Fix the issues or bypass with 'git commit --no-verify'."
+    exit 1
+fi
+exit 0

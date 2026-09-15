@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<hivemq>
+
+    <listeners>
+
+        <!--
+            MQTT over TLS.
+
+            This is the only MQTT listener exposed by HiveMQ.
+        -->
+        <tls-tcp-listener>
+
+            <name>mqtt-tls</name>
+
+            <port>8883</port>
+
+            <bind-address>0.0.0.0</bind-address>
+
+            <tls>
+
+                <keystore>
+
+                    <path>/opt/hivemq/conf/hivemq.jks</path>
+
+                    <password>changeit</password>
+
+                    <private-key-password>changeit</private-key-password>
+
+                </keystore>
+
+                <!--
+                    Username/password authentication is performed
+                    by the File RBAC extension.
+
+                    TLS client certificates are NOT required here.
+                -->
+                <client-authentication-mode>NONE</client-authentication-mode>
+
+            </tls>
+
+        </tls-tcp-listener>
+
+    </listeners>
+
+</hivemq>

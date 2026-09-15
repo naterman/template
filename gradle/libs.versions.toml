@@ -1,0 +1,247 @@
+[versions]
+archunit = "1.5.0"
+assertj = "3.27.7"
+atlantafx = "2.1.0"
+awaitility = "4.3.0"
+aws = "2.54.13"
+commons-collections = "4.6.0"
+commons-compress = "1.28.0"
+commons-config = "2.15.1"
+commons-imaging = "1.0.0-alpha6"
+commons-io = "2.22.0"
+commons-lang = "3.20.0"
+commons-math = "3.6.1"
+commons-text = "1.15.0"
+controlsfx = "11.2.5"
+dotenv = "3.2.0"
+errorprone = "2.50.0"
+errorprone-plugin = "5.1.1"
+gemsfx = "4.4.5"
+graphhopper = "11.0"
+grpc = "1.84.0"
+guava = "33.7.1-jre"
+guice = "7.0.0"
+hivemq-client = "1.4.0"
+javafx = "26.0.2"
+javafx-plugin = "0.1.0"
+jooq = "3.21.8"
+junit = "6.1.3"
+ktor = "3.5.2"
+log4j = "2.26.1"
+mockito = "5.23.0"
+nats = "2.26.2"
+nkeys = "3.0.5"
+openrewrite = "3.37.0"
+postgres = "42.7.13"
+protobuf = "4.36.1"
+protobuf-plugin = "0.10.0"
+rewrite-plugin = "7.39.0"
+shadow-plugin = "9.6.1"
+sonarlint = "2.2.0"
+sonarqube = "7.5.0.8588"
+spotbugs = "6.5.11"
+spotless = "8.10.2"
+supabase = "3.8.0"
+testcontainers = "2.0.5"
+testcontainers-nats = "1.1.8"
+testcontainers-postgresql = "1.21.4"
+validatorfx = "1.0.0"
+version-catalog-update = "1.1.1"
+flyway = "10.10.0"
+sqlite-jdbc = "3.53.4.0"
+jspecify = "1.0.1"
+
+[libraries]
+archunit = { module = "com.tngtech.archunit:archunit-junit5", version.ref = "archunit" }
+assertj = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+atlantafx = { module = "io.github.mkpaz:atlantafx-base", version.ref = "atlantafx" }
+stylefx = { module = "io.github.mkpaz:atlantafx-styles", version.ref = "atlantafx" }
+awaitility = { module = "org.awaitility:awaitility", version.ref = "awaitility" }
+aws-bom = { module = "software.amazon.awssdk:bom", version.ref = "aws" }
+aws-s3 = { module = "software.amazon.awssdk:s3" }
+commons-collections = { module = "org.apache.commons:commons-collections4", version.ref = "commons-collections" }
+commons-compress = { module = "org.apache.commons:commons-compress", version.ref = "commons-compress" }
+commons-config = { module = "org.apache.commons:commons-configuration2", version.ref = "commons-config" }
+commons-imaging = { module = "org.apache.commons:commons-imaging", version.ref = "commons-imaging" }
+commons-io = { module = "commons-io:commons-io", version.ref = "commons-io" }
+commons-lang = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang" }
+commons-math = { module = "org.apache.commons:commons-math3", version.ref = "commons-math" }
+commons-text = { module = "org.apache.commons:commons-text", version.ref = "commons-text" }
+controlsfx = { module = "org.controlsfx:controlsfx", version.ref = "controlsfx" }
+dotenv = { module = "io.github.cdimascio:dotenv-java", version.ref = "dotenv" }
+error-prone-annotations = { module = "com.google.errorprone:error_prone_annotations", version.ref = "errorprone" }
+error-prone-core = { module = "com.google.errorprone:error_prone_core", version.ref = "errorprone" }
+error-prone-test = { module = "com.google.errorprone:error_prone_test_helpers", version.ref = "errorprone" }
+errorprone-plugin = { module = "net.ltgt.errorprone:net.ltgt.errorprone.gradle.plugin", version.ref = "errorprone-plugin" }
+gemsfx = { module = "com.dlsc.gemsfx:gemsfx", version.ref = "gemsfx" }
+graphhopper = { module = "com.graphhopper:graphhopper-core", version.ref = "graphhopper" }
+grpc-bom = { module = "io.grpc:grpc-bom", version.ref = "grpc" }
+grpc-gen-java = { module = "io.grpc:protoc-gen-grpc-java", version.ref = "grpc" }
+grpc-netty-shaded = { module = "io.grpc:grpc-netty-shaded", version.ref = "grpc" }
+grpc-protobuf = { module = "io.grpc:grpc-protobuf", version.ref = "grpc" }
+grpc-stub = { module = "io.grpc:grpc-stub", version.ref = "grpc" }
+guava = { module = "com.google.guava:guava", version.ref = "guava" }
+guice = { module = "com.google.inject:guice", version.ref = "guice" }
+hivemq-client = { module = "com.hivemq:hivemq-mqtt-client", version.ref = "hivemq-client" }
+javafx-controls = { module = "org.openjfx:javafx-controls", version.ref = "javafx" }
+javafx-fxml = { module = "org.openjfx:javafx-fxml", version.ref = "javafx" }
+javafx-graphics = { module = "org.openjfx:javafx-graphics", version.ref = "javafx" }
+javafx-plugin = { module = "org.openjfx.javafxplugin:org.openjfx.javafxplugin.gradle.plugin", version.ref = "javafx-plugin" }
+javafx-swing = { module = "org.openjfx:javafx-swing", version.ref = "javafx" }
+javafx-web = { module = "org.openjfx:javafx-web", version.ref = "javafx" }
+jooq = { module = "org.jooq:jooq", version.ref = "jooq" }
+jooq-codegen = { module = "org.jooq:jooq-codegen", version.ref = "jooq" }
+jooq-codegen-plugin = { module = "org.jooq.jooq-codegen-gradle:org.jooq.jooq-codegen-gradle.gradle.plugin", version.ref = "jooq" }
+jooq-meta = { module = "org.jooq:jooq-meta", version.ref = "jooq" }
+jooq-meta-extensions = { module = "org.jooq:jooq-meta-extensions", version.ref = "jooq" }
+jooq-postgres-extensions = { module = "org.jooq:jooq-postgres-extensions", version.ref = "jooq" }
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+junit-jupiter-core = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit" }
+ktor-client = { module = "io.ktor:ktor-client", version.ref = "ktor" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+log4j-api = { module = "org.apache.logging.log4j:log4j-api", version.ref = "log4j" }
+log4j-core = { module = "org.apache.logging.log4j:log4j-core", version.ref = "log4j" }
+mockito = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+mockito-junit = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito" }
+nats = { module = "io.nats:jnats", version.ref = "nats" }
+nkeys = { module = "io.nats.nkeys:core-jdk25", version.ref = "nkeys" }
+openrewrite-bom = { module = "org.openrewrite.recipe:rewrite-recipe-bom", version.ref = "openrewrite" }
+openrewrite-core = { module = "org.openrewrite:rewrite-core" }
+openrewrite-groovy = { module = "org.openrewrite:rewrite-groovy" }
+openrewrite-java = { module = "org.openrewrite:rewrite-java" }
+openrewrite-java-migrate = { module = "org.openrewrite.recipe:rewrite-migrate-java" }
+openrewrite-java-seventeen = { module = "org.openrewrite:rewrite-java-17" }
+openrewrite-java-twenty-five = { module = "org.openrewrite:rewrite-java-25" }
+openrewrite-java-twenty-one = { module = "org.openrewrite:rewrite-java-21" }
+openrewrite-properties = { module = "org.openrewrite:rewrite-properties" }
+openrewrite-rewrite = { module = "org.openrewrite.recipe:rewrite-rewrite" }
+openrewrite-testing = { module = "org.openrewrite.recipe:rewrite-testing-frameworks" }
+postgres = { module = "org.postgresql:postgresql", version.ref = "postgres" }
+protobuf-java = { module = "com.google.protobuf:protobuf-java", version.ref = "protobuf" }
+protobuf-plugin = { module = "com.google.protobuf:com.google.protobuf.gradle.plugin", version.ref = "protobuf-plugin" }
+protobuf-util = { module = "com.google.protobuf:protobuf-java-util", version.ref = "protobuf" }
+protoc = { module = "com.google.protobuf:protoc", version.ref = "protobuf" }
+rewrite-plugin = { module = "org.openrewrite.rewrite:org.openrewrite.rewrite.gradle.plugin", version.ref = "rewrite-plugin" }
+shadow-plugin = { module = "com.gradleup.shadow:com.gradleup.shadow.gradle.plugin", version.ref = "shadow-plugin" }
+sonarlint-plugin = { module = "se.solrike.sonarlint:se.solrike.sonarlint.gradle.plugin", version.ref = "sonarlint" }
+sonarqube-plugin = { module = "org.sonarqube:org.sonarqube.gradle.plugin", version.ref = "sonarqube" }
+spotbugs-plugin = { module = "com.github.spotbugs:com.github.spotbugs.gradle.plugin", version.ref = "spotbugs" }
+spotless-plugin = { module = "com.diffplug.spotless:com.diffplug.spotless.gradle.plugin", version.ref = "spotless" }
+supabase = { module = "io.github.jan-tennert.supabase:supabase-kt-jvm", version.ref = "supabase" }
+testcontainers = { module = "org.testcontainers:testcontainers", version.ref = "testcontainers" }
+testcontainers-nats = { module = "io.github.amadeusitgroup.testcontainers:nats", version.ref = "testcontainers-nats" }
+testcontainers-postgres = { module = "org.testcontainers:postgresql", version.ref = "testcontainers-postgresql" }
+validatorfx = { module = "net.synedra:validatorfx", version.ref = "validatorfx" }
+version-catalog-update = { module = "nl.littlerobots.version-catalog-update:nl.littlerobots.version-catalog-update.gradle.plugin", version.ref = "version-catalog-update" }
+flyway-core = { module = "org.flywaydb:flyway-core", version.ref = "flyway" }
+flyway-postgres = { module = "org.flywaydb:flyway-database-postgresql", version.ref = "flyway" }
+sqlite-jdbc = { module = "org.xerial:sqlite-jdbc", version.ref = "sqlite-jdbc" }
+jspecify = { module = "org.jspecify:jspecify", version.ref = "jspecify" }
+
+[bundles]
+architecture = [
+    "archunit",
+]
+
+commons = [
+    "commons-collections",
+    "commons-compress",
+    "commons-config",
+    "commons-imaging",
+    "commons-io",
+    "commons-lang",
+    "commons-math",
+    "commons-text",
+]
+
+database = [
+    "jooq",
+    "postgres",
+]
+
+error-prone = [
+    "error-prone-annotations",
+    "error-prone-core",
+    "error-prone-test",
+]
+
+grpc = [
+    "grpc-netty-shaded",
+    "grpc-protobuf",
+    "grpc-stub",
+]
+
+integration = [
+    "testcontainers",
+    "testcontainers-postgres",
+]
+
+javafx = [
+    "javafx-controls",
+    "javafx-fxml",
+]
+
+javafx-ui = [
+    "atlantafx",
+    "controlsfx",
+    "gemsfx",
+    "javafx-controls",
+    "javafx-fxml",
+    "validatorfx",
+]
+
+jooq-codegen = [
+    "jooq-codegen",
+    "jooq-meta",
+    "jooq-meta-extensions",
+    "jooq-postgres-extensions",
+]
+
+junit = [
+    "junit-jupiter-core",
+    "junit-platform-launcher",
+]
+
+logging = [
+    "log4j-api",
+    "log4j-core",
+]
+
+mocking = [
+    "assertj",
+    "mockito",
+    "mockito-junit",
+]
+
+nats = [
+    "nats",
+    "nkeys",
+]
+
+openrewrite = [
+    "openrewrite-core",
+    "openrewrite-groovy",
+    "openrewrite-java",
+    "openrewrite-java-migrate",
+    "openrewrite-java-seventeen",
+    "openrewrite-java-twenty-five",
+    "openrewrite-java-twenty-one",
+    "openrewrite-properties",
+    "openrewrite-rewrite",
+    "openrewrite-testing",
+]
+
+protobuf = [
+    "protobuf-java",
+    "protobuf-util",
+]
+
+standard = [
+    "assertj",
+    "junit-jupiter-core",
+    "junit-platform-launcher",
+    "mockito",
+    "mockito-junit",
+]

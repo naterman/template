@@ -1,0 +1,24 @@
+/*
+ * Gradle Database Build File
+ */
+
+// ===================================================================
+// Core Settings
+// ===================================================================
+plugins {
+    id 'buildLogic.library'
+    id 'buildLogic.jooq-postgres'
+    id 'eclipse'
+}
+
+dependencies {
+    implementation(libs.bundles.database)
+    testImplementation(libs.testcontainers)
+    testImplementation(libs.testcontainers.postgres)
+    testImplementation(libs.flyway.core)
+    testImplementation(libs.flyway.postgres)
+}
+
+eclipse {
+    synchronizationTasks tasks.named('generateJooqCode')
+}

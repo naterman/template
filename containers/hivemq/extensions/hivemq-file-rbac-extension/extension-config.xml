@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<extension-configuration>
+
+    <!--
+        Reload credentials every 10 seconds.
+
+        Useful during development when modifying
+        credentials.xml.
+    -->
+    <credentials-reload-interval>10</credentials-reload-interval>
+
+    <!--
+        Passwords in credentials.xml are stored as plaintext
+        for this local test environment.
+
+        Change to HASHED for anything beyond testing.
+    -->
+    <password-type>PLAIN</password-type>
+
+</extension-configuration>
