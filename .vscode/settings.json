@@ -1,6 +1,4 @@
 {
-    "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home",
-    "java.import.gradle.java.home": "/Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home",
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.gradle.buildServer.enabled": "off",
     "java.autobuild.enabled": false,
